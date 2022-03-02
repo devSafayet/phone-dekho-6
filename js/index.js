@@ -29,8 +29,8 @@ phoneDisplay = (phones) => {
         <div class="card" style="width: 18rem;">
         <img src="${phone.image}" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">${phone.phone_name}</h5>
-          <p class="card-text">${phone.brand}</p>
+          <h5 class="card-title">Phone Name: ${phone.phone_name}</h5>
+          <p class="card-text">Phone Brand: ${phone.brand}</p>
           <button onclick="cardDetails('${phone.slug}')" class="btn btn-primary">See Details</button>
         </div>
       </div>
@@ -38,4 +38,14 @@ phoneDisplay = (phones) => {
         main.appendChild(div);
 
     }
+}
+const cardDetails = (id) => {
+    fetch(`https://openapi.programming-hero.com/api/phone/${id}`)
+        .then( res => res.json())
+        .then (data =>{
+            const allPhones= data.data;
+            // console.log(allPhones)
+            const singlePhone= allPhones.find( phone => phone.slug === id)
+            console.log(singlePhone)
+        })
 }
