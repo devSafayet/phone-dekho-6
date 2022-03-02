@@ -20,13 +20,12 @@ const searchButton = () => {
 }
 // function
 phoneDisplay = (phones) => {
-    // console.log(phones)
     if(phones.length == 0){ // searchbar null, error handling
         error.innerText ="No Phone Found, please give me phone name!";
         input.value= '';
         main.innerHTML= '';
     }
-    else{
+    else{ // main area
         for(const phone of phones){
             const div = document.createElement("div");
             div.classList.add("col-lg-4")
@@ -47,6 +46,7 @@ phoneDisplay = (phones) => {
         }
     }
 }
+// Details Phone area
 const cardDetails = (id) => {
     fetch(`https://openapi.programming-hero.com/api/phone/${id}`)
         .then( res => res.json())
