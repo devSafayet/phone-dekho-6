@@ -12,25 +12,26 @@ const searchButton = () => {
         main.innerHTML= '';
         fetch(` https://openapi.programming-hero.com/api/phones?search=${inputValue}`)
         .then( res => res.json())
-        .then (data => cardDisplay(data.data));
+        .then (data => phoneDisplay(data.data));
 
         input.value='';
         error.innerHTML= '';
     }
 }
 // function
-cardDisplay = (data) => {
-    for(const card of data){
+phoneDisplay = (phones) => {
+    for(const phone of phones){
         const div = document.createElement("div");
         div.classList.add("col-lg-4")
+        div.classList.add("col-sm-12")
         div.classList.add("mb-5")
         div.innerHTML= `
         <div class="card" style="width: 18rem;">
-        <img src="${card.image}" class="card-img-top" alt="...">
+        <img src="${phone.image}" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">${card.brand}</h5>
-          <p class="card-text">${card.phone_name}</p>
-          <button onclick="cardDetails('${card.slug}')" class="btn btn-primary">See Details</button>
+          <h5 class="card-title">${phone.phone_name}</h5>
+          <p class="card-text">${phone.brand}</p>
+          <button onclick="cardDetails('${phone.slug}')" class="btn btn-primary">See Details</button>
         </div>
       </div>
         `
