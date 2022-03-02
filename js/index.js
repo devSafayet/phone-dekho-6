@@ -59,11 +59,15 @@ const cardDetails = (id) => {
             main.innerHTML="";
             div.innerHTML= `
         <div class="card" style="width: 18rem;">
+        <div class="justify-content-center">
         <img src="${singlePhone.image}" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Phone Name: ${singlePhone.name}.name}</h5>
-          <p class="card-text">Phone Brand: ${singlePhone.brand}</p>
-          <p class="card-text">Phone Brand: ${singlePhone.mainFeatures.chipSet}</p>
+          <h5 class="card-title"><h5>Phone Name:</h5> ${singlePhone.name}</h5>
+          <p class="card-text"><h5>Phone Brand:</h5> ${singlePhone.brand}</p>
+          <p class="card-text"><h5>Phone chipSet:</h5> ${singlePhone.mainFeatures.chipSet}</p>
+          <p class="card-text"><h5>Phone Display Size:</h5> ${singlePhone.mainFeatures.displaySize}</p>
+          <p class="card-text"><h5>Phone Memory:</h5> ${singlePhone.mainFeatures.memory}</p>
+          <p class="card-text"><h5>Phone Storage:</h5> ${singlePhone.mainFeatures.storage}</p>
           
         </div>
       </div>
