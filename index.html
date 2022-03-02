@@ -16,16 +16,31 @@
         <!-- head line area  -->
         <h1 class="text-center text-primary mt-5 mb-4 ">Phone Dekho</h1>
         <!-- searchbar and button area  -->
-        <div class="row col-sm">
+        <div class="row">
             <nav class="navbar navbar-light bg-light ">
                 <div class="container-fluid justify-content-center">
-                  <form class="d-flex ">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                  </form>
+                  <div class="d-flex ">
+                    <input id="input-value" class="form-control me-2" type="search" placeholder="Search Phone" aria-label="Search">
+                    <button onclick="searchButton()" class="btn btn-outline-success" type="submit">Search</button>
+                  </div>
                 </div>
               </nav>
         </div>
+        
+        <!-- main area -->
+
+        <div id="main" class="row">
+
+        </div>
+  <!--   -->
+        <h2 id="error" class="text-center text-danger"> </h2>
+
+</div>
+
+
     </div>
+
+    <!-- JS stylesheet  -->
+    <script src="js/index.js"></script>
 </body>
 </html>
